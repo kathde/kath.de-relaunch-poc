@@ -1,0 +1,25 @@
+<div class="news-entry{% if entry.featured %} news-entry__featured{% endif %}">
+  <h3>
+    {% if entry.link %}
+      <a href="{{ entry.link }}">{{ entry.title }}</a>
+    {% else %}
+      {{ entry.title }}
+    {% endif %}
+  </h3>
+  {% if entry.subtitle %}
+    <p>{{ entry.subtitle | markdownify }}</p>
+  {% endif %}
+  <div class="meta"><span class="source">{{ entry.source }}</span>, <span class="date">{{ page.date | date: "%-d. %B %Y" }}</span></div>
+
+  {% if entry.related %}
+  <div class="news-related">
+  <span class="news-related--title">Außerdem zu diesem Thema:</span>
+
+  <div class="news-related--entries">
+    {% for sub_entry in entry.related %}
+      {% include news_sub_entry.html sub_entry = sub_entry %}
+    {% endfor %}
+  </div>
+  </div>
+  {% endif %}
+</div>

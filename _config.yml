@@ -1,0 +1,40 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: kath.de
+email: redaktion@kath.de
+description: >
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://kath.de" # the base hostname & protocol for your site
+timezone: Europe/Berlin
+
+# Build settings
+markdown: redcarpet
+encoding: utf-8
+permalinks: pretty
+permalink: /:year-:month-:day-:title
+
+collections:
+  archive:
+    output: true
+    path: /archiv/:name
+
+defaults:
+  - scope:
+      path: ""
+      type: archive
+    values:
+      layout: archive
+
+# Build settings
+exclude:
+  - 'Rakefile'
+
+# Server settings
+port: 4030
+host: 0.0.0.0

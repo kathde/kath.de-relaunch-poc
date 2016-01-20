@@ -1,0 +1,7 @@
+<div class="news-sub-entry">
+  <h4><a href="{{ sub_entry.link }}">{{ sub_entry.title }}</a></h4>
+  {% if sub_entry.subtitle %}
+    <p>{{ sub_entry.subtitle }}</p>
+  {% endif %}
+  <div class="meta"><span class="source">{{ sub_entry.source }}</span>, <span class="date">{{ page.date | date: "%-d. %B %Y" }}</span></div>
+</div>

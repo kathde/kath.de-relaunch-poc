@@ -1,0 +1,21 @@
+.news-entries {
+  padding: 0 .4em;
+
+  > * {
+    display: inline;
+  }
+
+  > .news-related {
+    display: block;
+    padding-left: .4em;
+  }
+}
+
+
+.news-sub-entry {
+  padding: 0;
+
+  > * {
+    display: inline;
+  }
+}

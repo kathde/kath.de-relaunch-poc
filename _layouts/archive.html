@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<div class="site-content layout-columns">
+  <div class="news-intro">
+    <div><h1>Nachrichtenüberblick {{ page.date | date: "%A, %-d. %B %Y" }}</h1>
+      <a href="#" class="redakteur">({{ page.redakteur }})</a></div>
+    <nav class="chronological">
+      Im Archiv:
+      {% assign day = 86400 %}
+      <a href="#">{{ page.date | date: "%s" | minus: day | date: "%-d. %B" }}</a>
+      <a href="#">{{ page.date | date: "%s" | minus: day | minus: day | date: "%-d. %B" }}</a>
+      <a href="#">{{ page.date | date: "%s" | minus: day | minus: day | minus: day | date: "%-d. %B" }}</a>
+    </nav>
+  </div>
+  <div class="news-sections">
+    {% for section in page.entries %}
+    <section class="news-section news-section--{{ section[0] | slugify }}">
+      <h2 class="section-title">{{ section[0] }}</h2>
+
+      <div class="news-entries">
+      {% for entry in section[1] %}
+        {% include news_entry.html entry = entry %}
+      {% endfor %}
+      <div class="partner">
+        <a href="http://www.stuflesser.com/de" onclick="javascript:urchinTracker('/outgoing/stuflesser_banner');">
+<img src="http://www.kath.de/b_hinweise/kath-de-stuflesser.gif" width="234" height="60" border="0" title="Kircheneinrichtungen Stuflesser" alt="Kircheneinrichtungen Stuflesser">
+</a>
+      </div>
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+</div>
