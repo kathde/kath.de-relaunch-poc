@@ -9,7 +9,7 @@
 title: kath.de
 email: redaktion@kath.de
 description: >
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/kath.de-relaunch-poc" # the subpath of your site, e.g. /blog
 url: "http://kath.de" # the base hostname & protocol for your site
 timezone: Europe/Berlin
 
